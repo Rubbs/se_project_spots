@@ -17,3 +17,4 @@ Spots is a website that allows users to view and share images, edit them and let
 This webpage is deployed to GitHub Pages.
 
 -Deployment Link:
+https://rubbs.github.io/se_project_spots/
