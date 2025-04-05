@@ -32,7 +32,7 @@
 
 .profile__description {
   margin: 0 0 12px;
-  color: #212121b2;
+  color: #212121;
   text-overflow: ellipsis;
   overflow: hidden;
   display: -webkit-box;
@@ -78,10 +78,6 @@
 }
 
 .profile__add-button:hover {
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-  align-items: center;
   opacity: 80%;
   cursor: pointer;
 }
