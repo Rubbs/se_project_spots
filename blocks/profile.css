@@ -8,6 +8,8 @@
   margin-right: 20px;
   height: 190px;
   width: 190px;
+  border-radius: 8px;
+  object-fit: cover;
 }
 
 .profile__column {
@@ -37,13 +39,16 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   max-width: 420px;
+  opacity: 0.7;
+  font-weight: 500;
 }
 
 .profile__edit-button {
+  display: flex;
+  gap: 8px;
   margin-top: auto;
-  width: 107px;
-  height: 16px;
   padding: 0;
+  color: #212121;
   font-size: 16px;
   font-weight: 500;
   line-height: 1;
@@ -51,6 +56,7 @@
   background: transparent;
   border: none;
   border-radius: 8px;
+  cursor: pointer;
 }
 
 .profile__edit-button:hover {
@@ -72,8 +78,12 @@
 }
 
 .profile__add-button:hover {
-  background: #212121b2;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
   opacity: 80%;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 627px) {
