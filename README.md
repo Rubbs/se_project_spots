@@ -18,3 +18,6 @@ This webpage is deployed to GitHub Pages.
 
 -Deployment Link:
 https://rubbs.github.io/se_project_spots/
+
+-Video link:
+https://www.loom.com/share/2c814bc6222046fb969263138ef30cee?sid=4ad3423a-1283-4628-bb09-9d9bf9684f0b
