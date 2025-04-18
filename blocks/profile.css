@@ -64,6 +64,10 @@
 }
 
 .profile__add-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   margin-top: auto;
   margin-left: auto;
   width: 149px;
