@@ -1,5 +1,7 @@
 .modal {
   visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 0.3s, opacity 0.3s linear;
   background-color: #0000800;
   position: fixed;
   top: 0;
@@ -15,6 +17,8 @@
 
 .modal_is-opened {
   visibility: visible;
+  opacity: 1;
+  transition-delay: 0s;
 }
 
 .modal__container {
@@ -65,9 +69,11 @@
   margin: 8px 0 0;
   width: 100%;
   padding: 16px 12px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 8px;
-  border-color: #212121b2;
-  opacity: 40%;
+  color: #212121;
+  font-size: 20px;
+  font-weight: 500;
   cursor: pointer;
   box-sizing: border-box;
 }
