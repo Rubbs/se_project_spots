@@ -43,10 +43,11 @@
   position: absolute;
   top: 32px;
   right: 50px;
+  opacity: 0.5;
 }
 
 .modal__close-button:hover {
-  opacity: 0.4;
+  opacity: 1;
 }
 
 .modal__title {
@@ -105,9 +106,13 @@
   cursor: pointer;
 }
 
+.modal__submit-button:hover {
+  opacity: 0.8;
+}
+
 @media screen and (max-width: 768px) {
   .modal__container {
-    padding: 20px;
+    padding: 22 12 12;
     max-width: 100%;
   }
 
@@ -132,9 +137,5 @@
     padding: 14px 0;
     margin: 0;
     height: auto;
-  }
-
-  .modal {
-    padding: 16px;
   }
 }
