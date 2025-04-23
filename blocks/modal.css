@@ -43,7 +43,7 @@
   position: absolute;
   top: 32px;
   right: 50px;
-  opacity: 0.5;
+  opacity: 0.4;
 }
 
 .modal__close-button:hover {
@@ -112,7 +112,7 @@
 
 @media screen and (max-width: 768px) {
   .modal__container {
-    padding: 22 12 12;
+    padding: 22px 12px 12px;
     max-width: 100%;
   }
 
