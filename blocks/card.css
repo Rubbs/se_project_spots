@@ -30,7 +30,7 @@
 }
 
 .card__delete-button {
-  background-image: url(../images/delete-default.svg);
+  background-image: url(../images/State=DeleteIcon.svg);
   background-repeat: no-repeat;
   background-position: center;
   width: 32px;
@@ -38,6 +38,14 @@
   position: absolute;
   top: 10px;
   right: 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.card__delete-button:hover {
+  background-image: url(../images/State=deleteHover.svg);
 }
 
 .card__like-button {

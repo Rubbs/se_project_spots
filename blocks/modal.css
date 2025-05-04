@@ -4,7 +4,7 @@
   transition: visibility 0s linear 0.3s, opacity 0.3s linear;
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
-  top: 0;
+  top: 0px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -29,9 +29,14 @@
   width: 100%;
   border-radius: 8px;
   background-color: #fff;
-  padding: 32px 50px;
+
   box-sizing: border-box;
   position: relative;
+}
+.modal__container--preview {
+  padding: 0;
+  background-color: transparent;
+  max-width: fit-content;
 }
 
 .modal__close-button {
@@ -50,8 +55,8 @@
   opacity: 0.4;
 }
 
-.modal__close_preview {
-  /* TODO - setup correct background image */
+.modal__close-button--preview {
+  background-image: url("../images/Preview-closebtn.svg");
   top: 0;
   right: -52.5px;
   position: absolute;
@@ -59,15 +64,6 @@
 
 .modal__close-button:hover {
   opacity: 1;
-}
-
-/* TODO - add hover effect for close button */
-
-.modal__title {
-  margin: 0 0 32px;
-  font-weight: 500;
-  font-size: 32px;
-  line-height: 100%;
 }
 
 .modal__form {
@@ -96,10 +92,10 @@
   line-height: 100%;
 }
 
-.modal__input:hover {
+.modalinput:hover {
   border-color: #212121;
 }
-.modal__input::placeholder {
+.modalinput::placeholder {
   color: #212121b2;
   font-weight: 500;
 }
@@ -137,7 +133,17 @@
 }
 
 .modal__title {
-  /*TODO _ style caption */
+  background-color: #212121;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 4px;
+  max-width: 100%;
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 500;
+  margin: 8px 0 0;
   color: white;
 }
 
@@ -147,13 +153,13 @@
     max-width: 100%;
   }
 
-  .modal__close-button {
+  .modalclose-button {
     top: 20px;
     right: 20px;
     width: 32px;
     height: 32px;
   }
-  .modal__title {
+  .modaltitle {
     font-size: 20px;
     margin: 0 0 20px;
   }
@@ -170,7 +176,7 @@
     height: auto;
   }
 
-  .modal__close_preview {
+  .modal__close-button--preview {
     top: -48px; /* Adjusted for better alignment */
     right: 0;
     position: absolute;

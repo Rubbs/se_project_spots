@@ -48,7 +48,7 @@ const modalNewPost = document.querySelector("#new-post-modal");
 const newPostCloseButton = modalNewPost.querySelector(".modal__close-button");
 
 const newPostForm = modalNewPost.querySelector(".modal__form");
-const newPostImageUrlInput = modalNewPost.querySelector("#card-image-input");
+const newPostImageInput = modalNewPost.querySelector("#card-image-input");
 const newPostCaptionInput = modalNewPost.querySelector("#post-caption-input");
 
 const profileNameEl = document.querySelector(".profile__name");
@@ -60,6 +60,7 @@ const previewModalCloseButton = previewModal.querySelector(
 );
 const previewimageEl = previewModal.querySelector(".modal__image");
 const previewCaptionEl = previewModal.querySelector(".modal__caption");
+const previewTitleEl = previewModal.querySelector(".modal__title");
 
 const cardTemplate = document
   .querySelector("#card-template")
@@ -78,9 +79,8 @@ function getCardElement(data) {
   const likeButton = cardElement.querySelector(".card__like-button");
   likeButton.addEventListener("click", function (evt) {
     evt.preventDefault();
-    evt.stopPropagation(); // Stop the event from bubbling up
-    console.log("Like button clicked");
-    this.classList.toggle("card__like-button_active");
+
+    evt.currentTarget.classList.toggle("card__like-button_active");
   });
 
   const cardDeleteButton = cardElement.querySelector(".card__delete-button");
@@ -91,7 +91,7 @@ function getCardElement(data) {
   cardImageEl.addEventListener("click", () => {
     previewimageEl.src = data.link;
     previewimageEl.alt = data.name;
-    previewCaptionEl.textContent = data.name;
+    previewTitleEl.textContent = data.name;
     openModal(previewModal);
   });
 
@@ -141,12 +141,12 @@ editProfileForm.addEventListener("submit", handleEditProfileSubmit);
 function handleNewPostSubmit(evt) {
   evt.preventDefault();
   const newPost = {
-    link: newPostImageUrlInput.value,
+    link: newPostImageInput.value,
     name: newPostCaptionInput.value,
   };
   const cardElement = getCardElement(newPost);
   cardsList.prepend(cardElement);
-  newPostImageUrlInput.value = "";
+  newPostImageInput.value = "";
   newPostCaptionInput.value = "";
   closeModal(modalNewPost);
 }
