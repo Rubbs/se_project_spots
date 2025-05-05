@@ -13,8 +13,11 @@
 }
 
 .profile__column {
+  max-width: 420px;
   display: flex;
   flex-direction: column;
+  min-height: 190px;
+  justify-content: flex-start;
 }
 
 .profile__name {
@@ -22,11 +25,9 @@
   font-weight: 500;
   font-size: 32px;
   line-height: 1;
-  display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
+  white-space: nowrap;
   max-width: 420px;
 }
 
