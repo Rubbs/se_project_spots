@@ -60,7 +60,7 @@ const previewModalCloseButton = previewModal.querySelector(
 );
 const previewImageEl = previewModal.querySelector(".modal__image");
 const previewCaptionEl = previewModal.querySelector(".modal__caption");
-const previewTitleEl = previewModal.querySelector(".modal__title");
+const previewTitleEl = previewModal.querySelector(".modal__caption");
 
 const cardTemplate = document
   .querySelector("#card-template")

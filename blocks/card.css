@@ -67,6 +67,7 @@
 }
 
 .card__like-button_active:hover {
+  background-image: url(../images/like\ btn\ hover.svg);
   opacity: 0.4;
 }
 
