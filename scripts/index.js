@@ -114,6 +114,11 @@ function closeModal(modal) {
 editProfileButton.addEventListener("click", function () {
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
+  const inputElements = Array.from(
+    editProfileModal.querySelectorAll(".modal__input")
+  );
+  resetValidation(editProfileForm, inputElements, settings);
+
   openModal(editProfileModal);
 });
 
@@ -126,6 +131,10 @@ previewModalCloseButton.addEventListener("click", function () {
 });
 
 newPostButton.addEventListener("click", function () {
+  const inputElements = Array.from(
+    modalNewPost.querySelectorAll(".modal__input")
+  );
+  resetValidation(newPostForm, inputElements, settings);
   openModal(modalNewPost);
 });
 
@@ -152,6 +161,12 @@ function handleNewPostSubmit(evt) {
   const cardElement = getCardElement(newPost);
   cardsList.prepend(cardElement);
   newPostForm.reset();
+
+  const inputList = Array.from(newPostForm.querySelectorAll(".modal__input"));
+  const buttonElement = newPostForm.querySelector(".modal__submit-button");
+
+  resetValidation(newPostForm, inputList, settings);
+
   closeModal(modalNewPost);
 }
 
