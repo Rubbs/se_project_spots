@@ -101,21 +101,31 @@ function getCardElement(data) {
 
   return cardElement;
 }
-// Function to create a card element
-function openModal(modal) {
-  modal.classList.add("modal_is-opened");
+
+function handleEscClose(evt) {
+  if (evt.key === "Escape") {
+    const openedModal = document.querySelector(".modal_is-opened");
+    if (openedModal) {
+      closeModal(openedModal);
+    }
+  }
 }
 
-// Function to close a modal
+function openModal(modal) {
+  modal.classList.add("modal_is-opened");
+  document.addEventListener("keydown", handleEscClose);
+}
+
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
+  document.removeEventListener("keydown", handleEscClose);
 }
 
 editProfileButton.addEventListener("click", function () {
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
   const inputElements = Array.from(
-    editProfileModal.querySelectorAll(".modal__input")
+    editProfileModal.querySelectorAll(settings.inputSelector)
   );
   resetValidation(editProfileForm, inputElements, settings);
 
@@ -132,7 +142,7 @@ previewModalCloseButton.addEventListener("click", function () {
 
 newPostButton.addEventListener("click", function () {
   const inputElements = Array.from(
-    modalNewPost.querySelectorAll(".modal__input")
+    modalNewPost.querySelectorAll(settings.inputSelector)
   );
   resetValidation(newPostForm, inputElements, settings);
   openModal(modalNewPost);
@@ -162,15 +172,30 @@ function handleNewPostSubmit(evt) {
   cardsList.prepend(cardElement);
   newPostForm.reset();
 
-  const inputList = Array.from(newPostForm.querySelectorAll(".modal__input"));
-  const buttonElement = newPostForm.querySelector(".modal__submit-button");
-
-  resetValidation(newPostForm, inputList, settings);
-
+  const submitButton = newPostForm.querySelector(settings.submitButtonSelector);
+  disabledButton(submitButton, settings);
   closeModal(modalNewPost);
 }
 
+const inputList = Array.from(
+  newPostForm.querySelectorAll(settings.inputSelector)
+);
+const buttonElement = newPostForm.querySelector(settings.submitButtonSelector);
+toggleButtonState(inputList, buttonElement, settings);
+resetValidation(newPostForm, inputList, settings);
+
+closeModal(modalNewPost);
+
 newPostForm.addEventListener("submit", handleNewPostSubmit);
+
+const modals = document.querySelectorAll(".modal");
+modals.forEach((modal) => {
+  modal.addEventListener("click", (evt) => {
+    if (evt.target === evt.currentTarget) {
+      closeModal(modal);
+    }
+  });
+});
 
 initialCards.forEach(function (item) {
   const cardElement = getCardElement(item);

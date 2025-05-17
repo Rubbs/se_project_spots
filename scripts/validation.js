@@ -12,7 +12,6 @@ const showInputError = (formElement, inputElement, errorMessage, config) => {
   errorMsgEl.textContent = errorMessage;
   inputElement.classList.add(config.inputErrorClass);
   errorMsgEl.classList.add(config.errorClass);
-  //TODO - add the error class to the error message element
 };
 
 const hideInputError = (formElement, inputElement, config) => {
@@ -54,8 +53,6 @@ const toggleButtonState = (inputList, buttonElement, config) => {
 const disabledButton = (buttonElement, config) => {
   buttonElement.disabled = true;
   buttonElement.classList.add(config.inactiveButtonClass);
-
-  //Don't forget the CSS class
 };
 
 const resetValidation = (formElement, inputList, config) => {
@@ -64,15 +61,12 @@ const resetValidation = (formElement, inputList, config) => {
   });
 };
 
-//TODO - use the setting object in all functions instead of hard-coded strings
-
 const setEventListeners = (formElement, config) => {
   const inputList = Array.from(
     formElement.querySelectorAll(config.inputSelector)
   );
   const buttonElement = formElement.querySelector(config.submitButtonSelector);
 
-  //TODO - handle inital states
   toggleButtonState(inputList, buttonElement, config);
 
   inputList.forEach((inputElement) => {
