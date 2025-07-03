@@ -30,7 +30,7 @@
 }
 
 .card__delete-button {
-  background-image: url(../images/State=DeleteIcon.svg);
+  background-image: url("../images/State=DeleteIcon.svg");
   background-repeat: no-repeat;
   background-position: center;
   width: 32px;
@@ -45,11 +45,11 @@
 }
 
 .card__delete-button:hover {
-  background-image: url(../images/State=deleteHover.svg);
+  background-image: url("../images/State=deleteHover.svg");
 }
 
 .card__like-button {
-  background-image: url(../images/Union.svg);
+  background-image: url("../images/Union.svg");
   width: 23px;
   height: 20px;
   opacity: 40%;
@@ -62,12 +62,12 @@
 }
 
 .card__like-button_active {
-  background-image: url(../images/like\ button.svg);
+  background-image: url("../images/like button.svg");
   opacity: 1;
 }
 
 .card__like-button_active:hover {
-  background-image: url(../images/like\ btn\ hover.svg);
+  background-image: url("../images/like btn hover.svg");
   opacity: 0.4;
 }
 
