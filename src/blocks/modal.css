@@ -68,7 +68,7 @@
 
 .modal__form {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   color: #212121b2;
   justify-content: center;
   gap: 20px;
@@ -144,6 +144,14 @@
   opacity: 0.5;
 }
 
+.modal__button-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0 149px;
+  gap: 20px;
+}
+/* This class is used for the delete modal */
 .modal__submit-button_danger {
   background-color: rgba(255, 101, 101, 1);
   font-family: Poppins;
@@ -159,7 +167,14 @@
   background-color: rgba(255, 51, 51, 1);
   color: rgba(0, 0, 0, 1);
 }
-
+.modal__close-button--delete {
+  position: absolute;
+  top: 0;
+  right: -52px;
+  background-image: url("../images/closebutton-delete.svg");
+  padding: 0;
+  z-index: 2;
+}
 .modal__image-container {
   position: relative;
 }
@@ -196,6 +211,7 @@
   border-radius: 8px;
 }
 
+/* Modal title and caption styles */
 .modal__title {
   font-size: 24px;
   line-height: 1.2;
@@ -224,6 +240,14 @@
     max-width: 100%;
   }
 
+  .modal__button-group {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+  }
+
   .modal__close-button {
     top: 20px;
     right: 20px;
@@ -241,10 +265,17 @@
   }
 
   .modal__submit-button {
-    width: 100%;
+    width: 156px;
     padding: 14px 0;
     margin: 0;
-    height: auto;
+    height: 52px;
+  }
+
+  .modal__cancel-button {
+    width: 156px;
+    padding: 14px 0;
+    margin: 0;
+    height: 52px;
   }
 
   .modal__close-button--preview {
@@ -260,5 +291,10 @@
 
   .modal__caption {
     font-size: 16px;
+  }
+
+  .modal__button-group {
+    flex-direction: column;
+    gap: 12px;
   }
 }

@@ -159,6 +159,7 @@ function handleEditAvatarSubmit(evt) {
   evt.preventDefault();
   const submitButton = editAvatarForm.querySelector(".modal__submit-button");
   setButtonText(submitButton, true);
+
   api
     .editAvatarInfo({ avatar: editAvatarUrlInput.value })
     .then((data) => {
@@ -339,4 +340,3 @@ enableValidation(settings);
 document.querySelector(".header__logo").src = logo;
 document.querySelector(".profile__edit-button img").src = pencilDark;
 document.querySelector(".profile__add-button img").src = plusIcon;
-document.querySelector(".profile__avatar-btn img").src = pencilLight;
