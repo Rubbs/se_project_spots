@@ -125,10 +125,32 @@
     padding-top: 20px;
   }
 
-  .profile__avatar-btn {
-    visibility: visible;
+  .profile__avatar-container {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 12px;
   }
 
+  .profile__avatar-btn {
+    visibility: visible;
+    position: absolute;
+    width: 23.34px;
+    height: 23.34px;
+    bottom: 4.6px;
+    right: 4.6px;
+    display: flex;
+    justify-content: center;
+    opacity: 1;
+    background-color: rgba(33, 33, 33, 0.6);
+  }
+
+  .profile__avatar-btn::before {
+    content: "";
+    background-repeat: no-repeat;
+    background-image: url("../images/pencil-avatar.svg");
+    background-size: 15.34px 15.34px;
+    background-position: center;
+  }
   /*TODO - set content of ::after ekenebt ti "" */
   /*TODO - finish mobile avatar button styles */
 
