@@ -40,7 +40,7 @@
 }
 
 .modal__close-button {
-  background-image: url("../images/closing\ icon\ black.svg");
+  background-image: url("../images/closingiconblack.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-color: transparent;
@@ -70,19 +70,21 @@
   display: flex;
   flex-direction: column;
   color: #212121b2;
+  justify-content: center;
+  gap: 32px;
 }
 
 .modal__label {
-  margin: 0 0 32px;
+  margin: 0;
   font-weight: 500;
-  margin-bottom: 32px;
   display: block;
 }
 
 .modal__input {
   display: block;
   margin: 8px 0 0;
-  width: 100%;
+  width: 630px;
+  height: 52px;
   padding: 16px 12px;
   border: 1px solid rgba(33, 33, 33, 0.4);
   border-radius: 8px;
@@ -142,8 +144,62 @@
   opacity: 0.5;
 }
 
+.modal__button-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0 149px;
+  gap: 20px;
+}
+/* This class is used for the delete modal */
+.modal__submit-button_danger {
+  background-color: rgba(255, 101, 101, 1);
+  font-family: Poppins;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgba(33, 33, 33, 1);
+}
+
+.modal__submit-button_danger:hover {
+  background-color: rgba(255, 51, 51, 1);
+  color: rgba(0, 0, 0, 1);
+}
+.modal__close-button--delete {
+  position: absolute;
+  top: 0;
+  right: -52px;
+  background-image: url("../images/closebutton-delete.svg");
+  padding: 0;
+  z-index: 2;
+}
 .modal__image-container {
   position: relative;
+}
+
+.modal__cancel-button {
+  width: 156px;
+  height: 52px;
+  padding: 18px 32px;
+  border-radius: 8px;
+  border-width: 1px;
+  border-color: rgba(33, 33, 33, 1);
+  background-color: #fff;
+  border-style: solid;
+  color: rgba(33, 33, 33, 1);
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 100%;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.modal__cancel-button:hover {
+  opacity: 0.8;
+  background-color: rgba(0, 0, 0, 1);
+  color: #fff;
 }
 
 .modal__image {
@@ -155,6 +211,7 @@
   border-radius: 8px;
 }
 
+/* Modal title and caption styles */
 .modal__title {
   font-size: 24px;
   line-height: 1.2;
@@ -183,6 +240,15 @@
     max-width: 100%;
   }
 
+  .modal__button-group {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 0 12px;
+  }
+
   .modal__close-button {
     top: 20px;
     right: 20px;
@@ -197,13 +263,20 @@
     font-size: 16px;
     padding: 12px;
     margin-top: 8px;
+    width: 100%;
   }
 
   .modal__submit-button {
-    width: 100%;
     padding: 14px 0;
     margin: 0;
-    height: auto;
+    height: 52px;
+  }
+
+  .modal__cancel-button {
+    width: 156px;
+    padding: 14px 0;
+    margin: 0;
+    height: 52px;
   }
 
   .modal__close-button--preview {
@@ -219,5 +292,10 @@
 
   .modal__caption {
     font-size: 16px;
+  }
+
+  .modal__button-group {
+    flex-direction: column;
+    gap: 12px;
   }
 }
